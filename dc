@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if hash docker-compose 2>/dev/null; then
+docker-compose -f docker-compose.base.yml -f docker-compose.development.yml -f docker-compose.development.override.yml "$@"
+else 
+docker compose -f docker-compose.base.yml -f docker-compose.development.yml -f docker-compose.development.override.yml "$@"
+fi

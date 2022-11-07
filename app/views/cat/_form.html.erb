@@ -1,0 +1,17 @@
+<div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Get cat facts!</h1>
+        <p>
+        <form>
+            <div class="input-group flex-nowrap mb-3">
+                <div class="form-floating">
+                    <%= number_field_tag 'limit', params[:limit] || 1, class: 'form-control' %>
+                    <label for="limit">How many?</label>
+                </div>
+                    <%= submit_tag "Get", class: "btn btn-primary" %>
+                </div>
+            </div>
+        </form>
+        </p>
+    </div>
+</div>

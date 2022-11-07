@@ -1,0 +1,21 @@
+
+<% if items.blank? %>
+   <p>Get some new cat facts!</p>
+<% else %>
+   <section class="py-5 text-center container">
+      <div class="container">
+         <div class="row">
+            <div class="list-group">
+               <% items.each do |c| %>
+                     <% if c[:id].blank? %>
+                        <%= c['fact'] %>
+                     <% else %>
+                        <%= link_to c['fact'], {:action => 'show', :id => c[:id]}, class: 'list-group-item list-group-item-action' %>
+                     <% end %>
+               <% end %>
+            </div>
+         </div>
+      </div>
+   </section>
+<% end %>
+  

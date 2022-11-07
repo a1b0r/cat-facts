@@ -1,0 +1,7 @@
+#!/bin/bash
+
+touch docker_development/bash_history
+
+if [ ! -f "docker-compose.development.override.yml"  ]; then
+	cp docker_development/docker-compose.development.override.yml.example docker-compose.development.override.yml
+fi

@@ -1,0 +1,21 @@
+
+<div class="card" style="">
+    <% title = item['fact'].split(' ').first(5).join(' ') + '...' %>
+    <% body = item['fact'].split(' ').drop(5).join(' ') %>
+    <% query =u title %>
+<%= link_to image_tag("https://cataas.com/cat/says/" + query , {class: 'card-img-top'}), {:action => 'show', :id => item[:id]} %>
+    
+    <div class="card-body">
+    <h5 class="card-title"><%= title %></h5>
+        <% if item['id'].present? %>
+            #<%= link_to item['id'].to_s, {:action => 'show', :id => item[:id]}, class: 'card-title' %>
+        <% end %>
+        <% if item['created_at'].present? %>
+            <h6 class="card-subtitle mb-2 text-muted">@<%= item['created_at'] %></h6>
+        <% end %>
+        <p class="card-text"><%= body %></p>
+        <small class="text-muted"> <%= noun_html_info item['fact'] %></small>
+    </div>
+</div>
+
+

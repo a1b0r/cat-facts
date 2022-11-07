@@ -1,0 +1,8 @@
+<%= link_to 'Prev', {:action => 'show', :id => @item['id'] - 1},{:style=>'position: static; float: left;', :class => "btn btn-primary"} %>
+<%= link_to 'Next', {:action => 'show', :id => @item['id'] + 1},{:style=>'position: static; float: right;', :class => "btn btn-primary"} %>
+<div class="container d-flex align-items-center justify-content-center">   
+    <%= render 'card', item: @item %>
+    
+</div>
+
+    

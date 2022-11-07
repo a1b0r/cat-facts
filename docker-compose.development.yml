@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app:
+    command: tail -f /dev/null
+    user: 1000:1000 # Not user 1000? Override this
+    volumes:
+      # You're the same user inside the container as outside
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+      # Use a directory with a correct owner as home directory
+      - ./docker_development/home:$HOME
+      # History files
+      - ./docker_development/bash_history:$HOME/.bash_history
+      # Application stuff
+      - .:/app
+    ports:
+      - "3035:3035"
